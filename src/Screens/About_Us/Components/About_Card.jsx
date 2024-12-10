@@ -8,8 +8,8 @@ const AboutCard = () => {
       {CardData.map((item, ind) => (
         <div className="w-full flex justify-center" key={ind}>
           <div
-            className={`flex lg:flex-row flex-col items-center justify-center my-10 gap-20 ${
-              ind === 1 ? "flex-row-reverse" : "flex-row"
+            className={`flex items-center justify-center my-10 gap-20 ${
+              ind % 2 === 1 ? "flex-row-reverse" : "flex-row"
             }`} // Reverse layout only for the second card
           >
             <div className="lg:w-[60%] flex flex-col gap-10 justify-center">
