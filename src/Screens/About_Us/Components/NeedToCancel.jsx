@@ -3,22 +3,21 @@ import { NeetToCancel } from "../../../Utils/DummyData";
 
 const NeedToCancel = () => {
   return (
-    <div className="py-10">
+    <div className="py-8">
       {NeetToCancel.map((items, ind) => (
         <div
-          className="flex flex-col text-center items-center py-10 gap-y-3"
+          className="flex flex-col text-center items-center py-10 gap-y-8"
           key={ind}
         >
-          <h1 className="mainheading text-[#D4AF37] font-semibold">
+          <h1 className="subheading text-goldColor font-semibold leading-10">
             {items.heading}
           </h1>
           <img
-            className="w-[400px] rounded-xl shadow-[#D4AF37] shadow-lg"
+            className="w-[200px] sm:w-[200px] md:w-[300px] lg:w-[400px] rounded-xl shadow-goldColor shadow-lg"
             src={items.img}
             alt={items.img}
           />
-          <h2 className="text3 text-whiteColor pt-4">{items.SubHead}</h2>
-          <p className="text3 text-whiteColor w-[64%]">{items.parph}</p>
+          <p className="text8 text-whiteColor w-[64%]">{items.parph}</p>
         </div>
       ))}
     </div>

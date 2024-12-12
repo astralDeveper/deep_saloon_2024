@@ -34,7 +34,6 @@ const imageNames = [
     "lock",
     "teamwork",
     "calenicon",
-    "blogimgtwo",
     "signupimg",
     "signinimg",
     "facebook",
@@ -119,6 +118,9 @@ const imageNames = [
     "locaticon",
     "slogan",
     "logo",
+    "lefticon",
+    "righticon",
+    "bottomarrow"
 ];
 
 

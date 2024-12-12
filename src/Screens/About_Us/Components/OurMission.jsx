@@ -3,8 +3,8 @@ import { OurMissions } from "../../../Utils/DummyData";
 
 const OurMission = () => {
   return (
-    <div className="bg-[#D4AF37] w-full py-10">
-      <div className="w-[80%] mx-auto my-4 bg-[#343434]">
+    <div className="bg-goldColor w-full py-10">
+      <div className="w-[80%] mx-auto my-4 bg-gray">
         {OurMissions.map((items, ind) => (
           <div className="flex items-center gap-14 justify-between" key={ind}>
             <div>
@@ -15,13 +15,10 @@ const OurMission = () => {
               />
             </div>
             <div>
-              <h1 className="text4 text-YellowColor uppercase ">
+              <h2 className="text2 py-2 text-whiteColor font-semibold">
                 {items.heading}
-              </h1>
-              <h2 className="text1 py-2 text-whiteColor font-semibold">
-                {items.subHead}
               </h2>
-              <p className="text4 font-light text-whiteColor">{items.parph}</p>
+              <p className="text10 font-light text-whiteColor">{items.parph}</p>
             </div>
           </div>
         ))}

@@ -12,10 +12,10 @@ export default {
       colors: {
         secondaryColor: "#161616",
         primaryColor: "#e1c45b",
-        darkColor: "#e1c45b",
+        // darkColor: "#e1c45b",
         blackColor: "#000000",
         whiteColor: "#ffffff",
-        grayColor: "#e1c45b",
+        // grayColor: "#e1c45b",
         grayColor2: "#2a2e39",
         darkYellowColor: "#473a12",
         YellowColor: "#d0a704",
@@ -23,7 +23,10 @@ export default {
         greenColor: "#4caf50",
         goldColor: "#D4AF37",
         offwhite: "#F2F2F2",
+        lightwhite: "#FAFAFA",
         gray: "#343434",
+        lightblack: "#061C3D",
+        text: "#CACACA",
       },
       boxShadow: {
         shadow1: "0 10px 50px -10px rgba(0, 0, 0, 0.3)",
