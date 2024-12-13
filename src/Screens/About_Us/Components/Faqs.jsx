@@ -19,7 +19,9 @@ const Faqs = () => {
       <div className="w-[80%] mx-auto py-16">
         <FaqsCard
           FaqData={aboutFaqData}
-          styles={"border-b-[1px] pt-4 border-primaryColor text-whiteColor"}
+          styles={
+            "border-b-[1px] py-4 px-2 border-primaryColor text-whiteColor"
+          }
           img={IMAGES.BOTTOMARROW}
           img2={IMAGES.MINUSGRAY}
         />

@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="mt-4 flex  flex-col items-start gap-2">
               <div className="flex items-center justify-start gap-3">
                 <img
-                  className="lg:w-[24px] md:w-[20px] sm:w-[16px] w-[16px] "
+                  className="lg:w-[20px] md:w-[20px] sm:w-[16px] w-[16px] "
                   src={IMAGES.CALLICON}
                   alt={IMAGES.CALLICON}
                 />

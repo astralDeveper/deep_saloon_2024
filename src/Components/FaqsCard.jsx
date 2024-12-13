@@ -15,21 +15,29 @@ const FaqsCard = ({ FaqData, styles, img, img2 }) => {
           key={index}
           className={`${styles} ${
             activeIndex === index
-              ? "h-auto bg-primaryColor text-lightblack"
+              ? "h-auto bg-primaryColor text-grayColor2"
               : "h-[65px]"
           } transition-all duration-300`}
         >
-          <div className="flex items-center justify-between">
-            <h1 className="text10">{faq.question}</h1>
+          <div
+            onClick={() => toggleAnswer(index)}
+            className="flex items-center cursor-pointer pt-1 justify-between"
+          >
+            <h1
+              className={`text11 ${
+                activeIndex === index ? "font-bold" : "font-normal"
+              } `}
+            >
+              {faq.question}
+            </h1>
             <img
-              onClick={() => toggleAnswer(index)}
               className="w-5 h-5 object-contain cursor-pointer"
               src={activeIndex === index ? img2 : img}
               alt={IMAGES.PLUS}
             />
           </div>
           <div className={`${activeIndex === index ? "block" : "hidden"} pt-6`}>
-            <p>{faq.answer}</p>
+            <p className="text11">{faq.answer}</p>
           </div>
         </div>
       ))}
