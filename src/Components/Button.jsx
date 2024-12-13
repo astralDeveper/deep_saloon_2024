@@ -1,14 +1,22 @@
 import React from "react";
 
-const Button = ({ title, btnStyle, onclick, type }) => {
+const Button = ({image,imagediv,imageStyle, divstyle, btnStyle, btnname, type, onPress, disabled }) => {
   return (
     <>
       <button
-        className={`lg:px-[28px] md:px-[14px] px-[7px] py-[6px] lg:py-[12px] font-medium ${btnStyle}`}
+        className={divstyle}
         type={type}
-        onClick={onclick}
+        onClick={onPress}
+        disabled={disabled}
       >
-        {title}
+        {image ?
+          <div className={imagediv}>
+            <img src={image} className={imageStyle}/>
+            <p className={btnStyle}>{btnname}</p>
+          </div>
+          :
+          <p className={btnStyle}>{btnname}</p>
+        }
       </button>
     </>
   );
