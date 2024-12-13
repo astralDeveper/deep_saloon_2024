@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Poppins";
+}
+
+@layer utilities {
+  .mainheading {
+    @apply lg:text-[101px] md:text-[80px] text-[40px] font-medium;
+  }
+  .subheading {
+    @apply lg:text-[90px] md:text-[50px] text-[30px];
+  }
+  .preheading {
+    @apply lg:text-[75px] md:text-[45px] text-[25px];
+  }
+  .heading1 {
+    @apply lg:text-[59px] md:text-[35px] text-[25px];
+  }
+  .heading2 {
+    @apply lg:text-[50px] md:text-[30px] text-[20px];
+  }
+  .heading3 {
+    @apply lg:text-[55px] md:text-[30px] text-[20px];
+  }
+  .text1 {
+    @apply lg:text-[46px] md:text-[28px] text-[20px];
+  }
+  .text2 {
+    @apply lg:text-[40px] md:text-[24px] text-[18px];
+  }
+  .text3 {
+    @apply lg:text-[38px] md:text-[24px] text-[18px];
+  }
+  .text4 {
+    @apply lg:text-[35px] md:text-[22px] text-[16px];
+  }
+  .text5 {
+    @apply lg:text-[31px] md:text-[20px] text-[14px];
+  }
+  .text6 {
+    @apply lg:text-[28px] md:text-[18px] text-[12px];
+  }
+  .text7 {
+    @apply lg:text-[25px] md:text-[17px] text-[11px];
+  }
+  .text8 {
+    @apply lg:text-[22px] md:text-[15px] text-[11px];
+  }
+  .text9 {
+    @apply lg:text-[20px] md:text-[14px] text-[10px];
+  }
+  .text10 {
+    @apply lg:text-[18px] md:text-[13px] text-[10px];
+  }
+  .text11 {
+    @apply lg:text-[15px] md:text-[12px] text-[9px];
+  }
+  .text12 {
+    @apply lg:text-[13px] md:text-[9px] text-[7px];
+  }
+ 
+  ul {
+    list-style-type: none;
+  }
+  
+  ul li::before {
+    content: "•";
+    margin-right: 8px;
+    color: #fff;  /* Adjust the color of the bullet */
+  }
+  
+}

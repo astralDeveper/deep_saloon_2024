@@ -34,7 +34,6 @@ const imageNames = [
     "lock",
     "teamwork",
     "calenicon",
-    "blogimgtwo",
     "signupimg",
     "signinimg",
     "facebook",
