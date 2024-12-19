@@ -1,13 +1,18 @@
 import React from "react";
 import { IMAGES } from "../Utils/images";
 import { blogDetailTable, footerImg, FootHeading } from "../Utils/DummyData";
+import Button from "../Components/Button";
+import Inputfield from "../Components/Inputfield";
 
 const Footer = () => {
   const heading = "Support";
 
   return (
     <div className="bg-secondaryColor w-full">
-      <div className="w-[80%] mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 py-12">
+      <div
+        className="w-[80%] mx-auto grid lg:grid-cols-4 md:grid-cols-2 
+      grid-cols-1 gap-8 py-12"
+      >
         {/* logo section  */}
         <div className="flex flex-col lg:gap-10 md:gap-7 sm:gap-4 gap-3">
           <img
@@ -31,19 +36,17 @@ const Footer = () => {
         {/* logo section  */}
 
         {/* Quick Links  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 text-primaryColor">
+        <div className=" grid grid-cols-1 md:grid-cols-2 text-primaryColor">
           {blogDetailTable.map((item, i) => (
-            <div key={i}>
+            <div key={i} className=" w-[245px]">
               <h2 className="text11 font-light pb-4">{item.heading}</h2>
-              <ul>
-                {item.links.map((items, ind) => (
-                  <div key={ind}>
-                    <li className="text11 font-medium py-1 cursor-pointer">
-                      {items.name}
-                    </li>
-                  </div>
-                ))}
-              </ul>
+              {item.links.map((items, ind) => (
+                <div key={ind}>
+                  <p className="text11 font-medium py-2 cursor-pointer">
+                    {items.name}
+                  </p>
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -77,15 +80,17 @@ const Footer = () => {
 
         {/* Our Newsletter  */}
         <div className="flex flex-col gap-2 lg:items-center">
-          <h1 className="text11 text-primaryColor">Our Newletters</h1>
-          <input
-            className="outline-none rounded-full px-3 py-1 bg-transparent border-[1px] border-whiteColor text-whiteColor"
-            type="text"
-            placeholder="Email*"
+          <Inputfield
+            name="email"
+            type="email"
+            placeholder="email*"
+            inputStyle="w-full outline-none rounded-full px-3 py-1 bg-transparent 
+            border-[1px] border-whiteColor text-whiteColor"
           />
-          <button className="border-[1px] border-primaryColor rounded-full px-5 py-1 text-primaryColor">
-            Subscribe
-          </button>
+          <Button
+            btnname="Subscribe"
+            btnStyle="border-[1px] border-primaryColor rounded-full px-5 py-1 text-primaryColor"
+          />
         </div>
         {/* Our Newsletter  */}
       </div>

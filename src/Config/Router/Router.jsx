@@ -6,19 +6,26 @@ import Articles from "../../Screens/Articles";
 import TermsConditions from "../../Screens/TermsConditions";
 import Hiring from "../../Screens/Hiring";
 import PrivacyPolicy from "../../Screens/PrivacyPolicy";
-import Testimonials from "../../Screens/Testimonials";  
+import Testimonials from "../../Screens/Testimonials";
 import Login from "../../Screens/Auth/Login";
 import Register from "../../Screens/Auth/Register";
+import Home from "../../Screens/Home";
+import Membership from "../../Screens/Membership";
+import Personas from "../../Screens/Personas";
 
 export const router = createBrowserRouter([
-    {
-      path: "/login", 
-      element: <Login />,
-    },
-    {
-      path: "/register", 
-      element: <Register />,
-    },
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
   {
     path: "/about",
     element: <AboutUs />,
@@ -30,6 +37,8 @@ export const router = createBrowserRouter([
   {
     path: "/contact-us",
     element: <ContactUs />,
+  },
+  {
     path: "/articles",
     element: <Articles />,
   },
@@ -49,5 +58,13 @@ export const router = createBrowserRouter([
   {
     path: "/hiring",
     element: <Hiring />,
+  },
+  {
+    path: "/membership",
+    element: <Membership />,
+  },
+  {
+    path: "/personas",
+    element: <Personas />,
   },
 ]);

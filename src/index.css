@@ -16,10 +16,10 @@
     @apply lg:text-[90px] md:text-[50px] text-[30px] lg:leading-[110px] md:leading-[82px] sm:leading-[38px];
   }
   .preheading {
-    @apply lg:text-[75px] md:text-[45px] text-[25px] lg:leading-[95px] md:leading-[70px] sm:leading-[36px];
+    @apply lg:text-[75px] md:text-[45px] text-[25px] lg:leading-[85px] md:leading-[70px] sm:leading-[36px];
   }
   .heading1 {
-    @apply lg:text-[59px] md:text-[35px] text-[25px] lg:leading-[86px] md:leading-[62px] sm:leading-[38px];
+    @apply lg:text-[59px] md:text-[35px] text-[25px] lg:leading-[70px] md:leading-[50px] sm:leading-[32px];
   }
   .heading2 {
     @apply lg:text-[55px] md:text-[30px] text-[20px] lg:leading-[75px] md:leading-[54px] sm:leading-[32px];
@@ -46,22 +46,25 @@
     @apply lg:text-[28px] md:text-[18px] text-[12px] lg:leading-[40x] md:leading-[30px] sm:leading-[16px];
   }
   .text7 {
-    @apply lg:text-[25px] md:text-[17px] text-[11px] lg:leading-[38x] md:leading-[32px] sm:leading-[16px];
+    @apply lg:text-[24px] md:text-[17px] text-[12px] lg:leading-[38x] md:leading-[32px] sm:leading-[16px];
   }
   .text8 {
     @apply lg:text-[22px] md:text-[15px] text-[11px] lg:leading-[34x] md:leading-[28px] sm:leading-[15px];
   }
   .text9 {
-    @apply lg:text-[20px] md:text-[14px] text-[10px] lg:leading-[29x] md:leading-[24px] sm:leading-[14px];
+    @apply lg:text-[20px] md:text-[14px] text-[10px] lg:leading-[29x] md:leading-[26px] sm:leading-[14px];
   }
   .text10 {
-    @apply lg:text-[18px] md:text-[13px] text-[10px] lg:leading-[24x] md:leading-[19px] sm:leading-[14px];
+    @apply lg:text-[18px] md:text-[13px] text-[10px] lg:leading-[28x] md:leading-[25px] sm:leading-[14px];
   }
   .text11 {
     @apply lg:text-[15px] md:text-[12px] text-[9px] lg:leading-[23x] md:leading-[18px] sm:leading-[13px];
   }
   .text12 {
     @apply lg:text-[13px] md:text-[9px] text-[8px] lg:leading-[22x] md:leading-[17px] sm:leading-[12px];
+  }
+  .text13 {
+    @apply lg:text-[10px] md:text-[8px] text-[8px] lg:leading-[18x] md:leading-[15px] sm:leading-[8px];
   }
 
   ul {

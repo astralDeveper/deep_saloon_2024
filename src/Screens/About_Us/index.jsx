@@ -31,8 +31,8 @@ const AboutUs = () => {
           <OurMission />
           <MeetYourExpectation />
           <MembersCard />
-          {/* <WhatPeopleSay /> */}
-          {/* <Review /> */}
+          <WhatPeopleSay />
+          <Review />
           <Faqs />
         </div>
       </div>

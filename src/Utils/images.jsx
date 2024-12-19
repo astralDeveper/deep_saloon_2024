@@ -120,7 +120,11 @@ const imageNames = [
     "logo",
     "lefticon",
     "righticon",
-    "bottomarrow"
+    "bottomarrow",
+    "contactimg",
+    "map",
+    "crossgray",
+    "facbookicon"
 ];
 
 

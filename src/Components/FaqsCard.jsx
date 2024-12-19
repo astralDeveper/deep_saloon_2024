@@ -15,7 +15,7 @@ const FaqsCard = ({ FaqData, styles, img, img2 }) => {
           key={index}
           className={`${styles} ${
             activeIndex === index
-              ? "h-auto bg-primaryColor text-grayColor2"
+              ? "h-auto bg-primaryColor text-grayColor2 rounded-lg"
               : "h-[65px]"
           } transition-all duration-300`}
         >
@@ -25,8 +25,10 @@ const FaqsCard = ({ FaqData, styles, img, img2 }) => {
           >
             <h1
               className={`text11 ${
-                activeIndex === index ? "font-bold" : "font-normal"
-              } `}
+                activeIndex === index
+                  ? "font-bold text-black"
+                  : "font-normal text-grayColor"
+              }`}
             >
               {faq.question}
             </h1>
@@ -37,7 +39,13 @@ const FaqsCard = ({ FaqData, styles, img, img2 }) => {
             />
           </div>
           <div className={`${activeIndex === index ? "block" : "hidden"} pt-6`}>
-            <p className="text11">{faq.answer}</p>
+            <p
+              className={`text11 ${
+                activeIndex === index ? "text-black" : "text-grayColor"
+              }`}
+            >
+              {faq.answer}
+            </p>
           </div>
         </div>
       ))}
@@ -46,5 +54,3 @@ const FaqsCard = ({ FaqData, styles, img, img2 }) => {
 };
 
 export default FaqsCard;
-
-// bg-gray text-whiteColor overflow-hidden rounded-2xl p-4 px-6 my-3

@@ -1,6 +1,3 @@
-
-
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -14,13 +11,13 @@ export default {
       },
       colors: {
         secondaryColor: "#161616",
-        placeHolder:"#A0A4AC",
-        borderColor:'#CCCCCC',
-        socialColor:'#313957',
-        textRedColor:'#E91E1E',
-        primaryColor: "#e1c45b", 
+        placeHolder: "#A0A4AC",
+        borderColor: "#CCCCCC",
+        socialColor: "#313957",
+        textRedColor: "#E91E1E",
+        primaryColor: "#e1c45b",
         blackColor: "#000000",
-        whiteColor: "#ffffff", 
+        whiteColor: "#ffffff",
         grayColor2: "#2a2e39",
         darkYellowColor: "#473a12",
         YellowColor: "#d0a704",
@@ -32,6 +29,14 @@ export default {
         gray: "#343434",
         lightblack: "#061C3D",
         text: "#CACACA",
+        lightGray: "#868993",
+        grayColor: "#D1D4DC",
+        tableColor: "#131722",
+        bioColor: "#D6D6D6",
+        borderColor2: "#E4A70A",
+        personaColor: "#DFDFDF",
+        checkBoxColor: "#4CAF50",
+        percentColor: "#D9D9D9",
       },
       boxShadow: {
         shadow1: "0 10px 50px -10px rgba(0, 0, 0, 0.3)",

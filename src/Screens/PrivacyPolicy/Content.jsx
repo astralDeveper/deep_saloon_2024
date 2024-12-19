@@ -37,6 +37,7 @@ const PrivacyContent = () => {
                                                     <span className="text-white font-normal text9 pt-[2px] pl-[2px] md:pl-2">{bullet.para}</span>
                                                 </p>
                                             )}
+                                            
                                         </div>
                                     </li>
                                 ))}
