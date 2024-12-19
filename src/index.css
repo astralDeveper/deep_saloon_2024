@@ -6,8 +6,6 @@
   font-family: "Poppins";
 }
 
-
-
 @layer utilities {
   .mainheading {
     @apply lg:text-[101px] md:text-[80px] text-[40px] lg:leading-[120px] md:leading-[92px] sm:leading-[45px];
@@ -67,10 +65,10 @@
   ul {
     list-style-type: none;
   }
-  
-  ul li::before {
+
+  /* ul li::before {
     content: "•";
     margin-right: 8px;
-    color: #fff;  /* Adjust the color of the bullet */
-  }
+    color: #fff;
+  } */
 }

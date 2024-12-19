@@ -1,6 +1,3 @@
-
-
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -14,14 +11,15 @@ export default {
       },
       colors: {
         secondaryColor: "#161616",
-        placeHolder:"#A0A4AC",
-        borderColor:'#CCCCCC',
-        socialColor:'#313957',
-        textRedColor:'#E91E1E',
-        primaryColor: "#e1c45b", 
+        placeHolder: "#A0A4AC",
+        borderColor: "#CCCCCC",
+        socialColor: "#313957",
+        textRedColor: "#E91E1E",
+        primaryColor: "#e1c45b",
         blackColor: "#000000",
-        whiteColor: "#ffffff", 
+        whiteColor: "#ffffff",
         grayColor2: "#2a2e39",
+        grayColor3: "#5c5c5c",
         darkYellowColor: "#473a12",
         YellowColor: "#d0a704",
         redColor: "#ff4040",
