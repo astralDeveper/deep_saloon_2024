@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import TopHeader from "../../../Components/TopHeader";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import ServiceCard from "../../../Components/cards/ServiceCard";
 import Pagination from "../../../Components/Pagination";
 import { IMAGES } from "../../../utils/Images";
 import DropDown from "../../../Components/DropDown";
+import { IoCloseSharp } from "react-icons/io5";
+import { MdMenu } from "react-icons/md";
 
 const categories = [
   "All",
@@ -429,6 +431,8 @@ const initialServicesData = [
 const itemsPerPage = 6;
 
 export default function SkinCare() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
   const [servicesData, setServicesData] = useState(initialServicesData);
   const [currentPage, setCurrentPage] = useState(1);
   const [openFilter, setOpenFilter] = useState(null);
@@ -506,6 +510,7 @@ export default function SkinCare() {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1); // Reset to the first page
+    setMenuOpen(false);
   };
 
   const handlePriceFilter = (price) => {
@@ -513,6 +518,7 @@ export default function SkinCare() {
     setSelectedBrand(null);
     setSelectedBrands(null);
     setCurrentPage(1);
+    setMenuOpen(false);
   };
 
   const handleBrandFilter = (brand) => {
@@ -520,6 +526,7 @@ export default function SkinCare() {
     setSelectedPrice(null);
     setSelectedBrands(null);
     setCurrentPage(1);
+    setMenuOpen(false);
   };
 
   const handleBrandsFilter = (brands) => {
@@ -527,124 +534,236 @@ export default function SkinCare() {
     setSelectedBrand(null);
     setSelectedPrice(null);
     setCurrentPage(1);
+    setMenuOpen(false);
   };
 
   const handleSortByChange = (sortOption) => {
     setSortBy(sortOption);
     setCurrentPage(1); // Reset to first page on sort change
-    console.log();
+  };
+
+  const handleMenuOpen = () => {
+    setMenuOpen(true);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
   };
 
   return (
-    <div className="bg-secondaryColor">
-      <TopHeader name="Skin Care" />
-      <div className="container mx-auto">
-        <div className="flex justify-end w-[270px] ms-auto">
-          <DropDown selectValue={sortByOptions} onSelect={handleSortByChange} />
-        </div>
-        <div className="grid grid-cols-12 gap-4 py-12">
-          <div className="col-span-3">
-            <h3 className="text5 font-normal text-primaryColor border-b border-gray px-2 pb-4">
-              Filter by
-            </h3>
-            {/* Dynamic Categories */}
-            <div>
-              <h5 className="text8 font-normal text-primaryColor p-2">
-                Category
-              </h5>
-              {categories.map((category, index) => (
-                <h6
-                  key={index}
-                  className={`text12 font-normal px-2 pb-2 cursor-pointer ${
-                    selectedCategory === category
-                      ? "text-white"
-                      : "text-primaryColor"
-                  }`}
-                  onClick={() => handleCategoryChange(category)}
-                >
-                  {category}
-                </h6>
-              ))}
+    <>
+      <div className="bg-secondaryColor">
+        <TopHeader name="Skin Care" />
+        <div className="md:container mx-auto">
+          <div className="flex justify-between md:justify-end w-full px-2 md:px-0 gap-4">
+            <button onClick={handleMenuOpen} className="block md:hidden">
+              <MdMenu size={24} color="#e1c45b" />
+            </button>
+            <div className="w-[270px] md:ms-auto">
+              <DropDown
+                selectValue={sortByOptions}
+                onSelect={handleSortByChange}
+              />
             </div>
-
-            {/* Dynamic Filters */}
-            {filters.map((filter, index) => (
-              <div
-                key={index}
-                className="py-4 border-b border-gray cursor-pointer "
-              >
-                {/* Filter Header */}
-                <div
-                  className="px-2 pb-2 flex justify-between items-center cursor-pointer"
-                  onClick={() => handleFilterToggle(index)}
-                >
-                  <h6 className="text10 font-normal text-primaryColor">
-                    {filter.label}
+          </div>
+          <div className="grid grid-cols-12 gap-4 py-6 sm:py-8 md:py-12">
+            <div className="hidden md:block md:col-span-4 xl:col-span-3">
+              <h3 className="text5 font-normal text-primaryColor border-b border-gray px-2 pb-4">
+                Filter by
+              </h3>
+              {/* Dynamic Categories */}
+              <div>
+                <h5 className="text8 font-normal text-primaryColor p-2">
+                  Category
+                </h5>
+                {categories.map((category, index) => (
+                  <h6
+                    key={index}
+                    className={`text12 font-normal px-2 pb-2 cursor-pointer ${
+                      selectedCategory === category
+                        ? "text-white"
+                        : "text-primaryColor"
+                    }`}
+                    onClick={() => handleCategoryChange(category)}
+                  >
+                    {category}
                   </h6>
-                  {openFilter === index ? (
-                    <FiMinus size={24} color="#000" />
-                  ) : (
-                    <FiPlus size={24} color="#000" />
-                  )}
-                </div>
+                ))}
+              </div>
 
-                {/* Filter Options */}
+              {/* Dynamic Filters */}
+              {filters.map((filter, index) => (
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openFilter === index
-                      ? "max-h-[200px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
+                  key={index}
+                  className="py-4 border-b border-gray cursor-pointer "
                 >
-                  <div className="flex gap-4 mt-2 flex-wrap">
-                    {filter.options.map((item, itemIndex) => (
-                      <button
-                        key={itemIndex}
-                        className="border border-borderColor/40 text-primaryColor/40 font-normal 
+                  {/* Filter Header */}
+                  <div
+                    className="px-2 pb-2 flex justify-between items-center cursor-pointer"
+                    onClick={() => handleFilterToggle(index)}
+                  >
+                    <h6 className="text10 font-normal text-primaryColor">
+                      {filter.label}
+                    </h6>
+                    {openFilter === index ? (
+                      <FiMinus size={24} color="#000" />
+                    ) : (
+                      <FiPlus size={24} color="#000" />
+                    )}
+                  </div>
+
+                  {/* Filter Options */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openFilter === index
+                        ? "max-h-[200px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="flex gap-4 mt-2 flex-wrap">
+                      {filter.options.map((item, itemIndex) => (
+                        <button
+                          key={itemIndex}
+                          className="border border-borderColor/40 text-primaryColor/40 font-normal 
                         flex justify-center items-center px-3 py-1 rounded-full text-xs 
                         hover:border-primaryColor/40 hover:bg-primaryColor/40 hover:text-whiteColor/40
                         focus:border-primaryColor/90 focus:bg-primaryColor/90 focus:text-whiteColor"
-                        onClick={() => {
-                          if (filter?.label === "Price") {
-                            handlePriceFilter(item);
-                          } else if (filter?.label === "Brand") {
-                            handleBrandFilter(item);
-                          } else if (filter?.label === "Brands") {
-                            handleBrandsFilter(item);
-                          }
-                        }}
-                      >
-                        {item}
-                      </button>
-                    ))}
+                          onClick={() => {
+                            if (filter?.label === "Price") {
+                              handlePriceFilter(item);
+                            } else if (filter?.label === "Brand") {
+                              handleBrandFilter(item);
+                            } else if (filter?.label === "Brands") {
+                              handleBrandsFilter(item);
+                            }
+                          }}
+                        >
+                          {item}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="col-span-9">
-            <div className="grid grid-cols-4 gap-x-2 gap-y-4 ">
-              {paginatedData?.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  servicesData={service}
-                  toggleFavorite={toggleFavorite}
-                />
               ))}
             </div>
-            {/* Remove pagination if any filter is applied */}
-            {!(selectedPrice || selectedBrands || selectedBrand) && (
-              <div className="flex justify-end">
-                <Pagination
-                  totalPages={totalPages}
-                  currentPage={currentPage}
-                  onPageChange={handlePageChange}
-                />
+            <div className=" col-span-12 md:col-span-8 xl:col-span-9">
+              <div className="grid xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 gap-y-4 px-2 md:px-0">
+                {paginatedData?.map((service) => (
+                  <ServiceCard
+                    key={service.id}
+                    servicesData={service}
+                    toggleFavorite={toggleFavorite}
+                  />
+                ))}
               </div>
-            )}
+              {/* Remove pagination if any filter is applied */}
+              {!(selectedPrice || selectedBrands || selectedBrand) && (
+                <div className="flex justify-end">
+                  <Pagination
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    onPageChange={handlePageChange}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {isMenuOpen && (
+        <div
+          id="static-modal"
+          className="fixed top-0 right-0 left-0  flex justify-center items-center w-full h-full bg-slate-50 bg-opacity-5 backdrop-blur-sm"
+        >
+          <div className="w-full max-h-full " ref={menuRef}>
+            <div className="bg-tranparent px-8 shadow-md border min-h-[100vh] z-0 flex flex-col justify-center relative">
+              <div className="absolute top-0 bottom-0 left-0 w-[310px] bg-secondaryColor">
+                <h3 className="text5 font-normal text-primaryColor border-b border-gray px-2 pb-4">
+                  Filter by
+                </h3>
+                {/* Dynamic Categories */}
+                <div>
+                  <h5 className="text8 font-normal text-primaryColor p-2">
+                    Category
+                  </h5>
+                  {categories.map((category, index) => (
+                    <h6
+                      key={index}
+                      className={`text12 font-normal px-2 pb-2 cursor-pointer ${
+                        selectedCategory === category
+                          ? "text-white"
+                          : "text-primaryColor"
+                      }`}
+                      onClick={() => handleCategoryChange(category)}
+                    >
+                      {category}
+                    </h6>
+                  ))}
+                </div>
+
+                {/* Dynamic Filters */}
+                {filters.map((filter, index) => (
+                  <div
+                    key={index}
+                    className="py-2 border-b border-gray cursor-pointer "
+                  >
+                    {/* Filter Header */}
+                    <div
+                      className="px-2 pb-0 flex justify-between items-center cursor-pointer"
+                      onClick={() => handleFilterToggle(index)}
+                    >
+                      <h6 className="text10 font-normal text-primaryColor">
+                        {filter.label}
+                      </h6>
+                      {openFilter === index ? (
+                        <FiMinus size={24} color="#000" />
+                      ) : (
+                        <FiPlus size={24} color="#000" />
+                      )}
+                    </div>
+
+                    {/* Filter Options */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        openFilter === index
+                          ? "max-h-[200px] opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="flex gap-4 mt-2 ">
+                        {filter.options.map((item, itemIndex) => (
+                          <button
+                            key={itemIndex}
+                            className="border border-borderColor/40 text-primaryColor/40 font-normal 
+                        flex justify-center items-center px-3 py-1 rounded-full text-xs 
+                        hover:border-primaryColor/40 hover:bg-primaryColor/40 hover:text-whiteColor/40
+                        focus:border-primaryColor/90 focus:bg-primaryColor/90 focus:text-whiteColor"
+                            onClick={() => {
+                              if (filter?.label === "Price") {
+                                handlePriceFilter(item);
+                              } else if (filter?.label === "Brand") {
+                                handleBrandFilter(item);
+                              } else if (filter?.label === "Brands") {
+                                handleBrandsFilter(item);
+                              }
+                            }}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute top-2 right-2" onClick={handleMenuClose}>
+                <IoCloseSharp color="white" size={24} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

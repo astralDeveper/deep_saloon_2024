@@ -80,43 +80,49 @@ const initialServicesData = [
 export default function InnerPage() {
   return (
     <div className="bg-secondaryColor">
-      <div className="container mx-auto">
+      <div className="md:container md:mx-auto">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-9 flex gap-2">
-            <div className="flex flex-col gap-4 p-2">
+          <div className="col-span-12 lg:col-span-9 flex flex-col md:flex-row gap-2">
+            <div className="flex flex-row md:flex-col  gap-2 md:gap-4 p-2">
               <div
-                className="bg-center bg-cover bg-no-repeat h-[80px] w-[80px] mx-auto"
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
                 style={{
                   backgroundImage: `url(${IMAGES.MAKEUP})`,
                 }}
               ></div>
               <div
-                className="bg-center bg-cover bg-no-repeat h-[80px] w-[80px] mx-auto"
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
                 style={{
                   backgroundImage: `url(${IMAGES.MAKEUP})`,
                 }}
               ></div>
               <div
-                className="bg-center bg-cover bg-no-repeat h-[80px] w-[80px] mx-auto"
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
                 style={{
                   backgroundImage: `url(${IMAGES.MAKEUP})`,
                 }}
               ></div>
               <div
-                className="bg-center bg-cover bg-no-repeat h-[80px] w-[80px] mx-auto"
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
                 style={{
                   backgroundImage: `url(${IMAGES.MAKEUP})`,
                 }}
               ></div>
               <div
-                className="bg-center bg-cover bg-no-repeat h-[80px] w-[80px] mx-auto"
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
+                style={{
+                  backgroundImage: `url(${IMAGES.MAKEUP})`,
+                }}
+              ></div>
+              <div
+                className="bg-center bg-cover bg-no-repeat h-[40px] md:h-[80px] w-[80px] mx-auto"
                 style={{
                   backgroundImage: `url(${IMAGES.MAKEUP})`,
                 }}
               ></div>
             </div>
-            <div className="flex w-5/12 p-2">
-              <div className="p-2 shadow-[3px_3px_5px_1px_rgba(0,0,0,0.1),_3px_3px_5px_1px_rgba(225,196,91,0.15)] border border-primaryColor/50 rounded-md w-full h-full">
+            <div className="flex w-10/12 md:w-5/12 md:p-2 mx-auto">
+              <div className="p-2 shadow-[3px_3px_5px_1px_rgba(0,0,0,0.1),_3px_3px_5px_1px_rgba(225,196,91,0.15)] border border-primaryColor/50 rounded-md w-full min-h-[250px] sm:min-h-[350px] md:h-full">
                 <div
                   className="bg-center bg-cover bg-no-repeat h-full w-full rounded-md"
                   style={{
@@ -125,7 +131,7 @@ export default function InnerPage() {
                 ></div>
               </div>
             </div>
-            <div className="flex flex-col w-6/12 p-2">
+            <div className="flex flex-col w-11/12 md:w-6/12 p-2">
               <div className="pb-4 border-b border-primaryColor/50">
                 <h4 className="text-3xl text-primaryColor"> Peel off mask</h4>
                 <div className="text-xs text-whiteColor">
@@ -179,13 +185,10 @@ export default function InnerPage() {
                   bg-transparent font-medium py-2 text12 rounded-full outline-none mb-2 
                   px-2"
                 />
-                {/* <div className="pt-1">
-                  <Rating eatery={{ rating: 3 }} />
-                </div> */}
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-12 lg:col-span-3 mx-2">
             <div className="border my-2 rounded-md border-primaryColor/50 shadow-[3px_3px_5px_1px_rgba(0,0,0,0.1),_3px_3px_5px_1px_rgba(225,196,91,0.15)] p-4 ">
               <h4 className="text-3xl text-primaryColor text-center mb-4">
                 Peel off mask
@@ -233,7 +236,7 @@ export default function InnerPage() {
             </div>
           </div>
         </div>
-        <div className="pt-4">
+        <div className="pt-4 mx-2">
           <h6 className="text-xl text-primaryColor my-4 me-auto">
             Additional Info section
           </h6>
@@ -285,7 +288,7 @@ export default function InnerPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-5 gap-x-4 gap-y-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-4 mx-2">
           {initialServicesData?.map((service) => (
             <RelatedCard key={service.id} servicesData={service} />
           ))}

@@ -106,8 +106,8 @@ const Favorites = () => {
   return (
     <div className="bg-secondaryColor">
       <TopHeader name="Favorites" />
-      <div className="container mx-auto px-32">
-        <div className="grid grid-cols-4 gap-x-2 gap-y-4 py-4">
+      <div className="md:container mx-auto md:px-32">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-x-2 gap-y-4 py-4">
           {servicesData.length > 0 ? (
             servicesData.map((service) => (
               <ServiceCard
